@@ -4,7 +4,7 @@
         <div class="slds-var-m-around_medium">
             
             <form>         
-                <template for:each={myQuestions} for:item="quiz">
+            <template for:each={myQuestions} for:item="quiz">
          <div key={quiz.id} class="slds-var-m-bottom_medium">
          <div><strong>{quiz.id} - {quiz.question}</strong></div> 
          <div class="slds-grid slds-gutters slds-var-p-bottom_medium">
@@ -26,22 +26,24 @@
          </template>
          <lightning-button 
           variant="brand"
+          onclick={submitHandler}
           type="submit"
           label="Submit"
           class="slds-m-around_small"
           title="Submit Quiz"
           disabled={allNotSelected}
-          onclick={submitHandler}
+          
          >
 
          </lightning-button>
          <lightning-button 
           variant="brand"
+          onclick={resetHandler}
           type="reset"
           label="Resett"
           class="slds-m-around_small"
           title="Reset Quiz"
-          onclick={resetHandler}
+          
          >
 
          </lightning-button>
